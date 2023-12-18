@@ -1,0 +1,5 @@
+--- a/src/crypto/tls_openssl.c
++++ b/src/crypto/tls_openssl.c
+@@ -1051,1 +1051,1 @@
+-
++   SSL_CTX_set_options(ssl, SSL_OP_LEGACY_SERVER_CONNECT);
