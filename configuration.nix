@@ -6,6 +6,7 @@
 	imports = [
 		./hardware-configuration.nix
 		./networks.nix
+		./users/ice.nix
 	];
 
 	boot = {
@@ -138,29 +139,6 @@
 		noto-fonts-emoji
 		victor-mono
 	];
-
-	users = {
-		users = {
-			ice = {
-				isNormalUser = true;
-				description  = "!omne";
-				extraGroups  = [ "audio" "input" "wheel" ];
-				packages     = with pkgs; [
-					microsoft-edge
-					mprime
-				];
-				shell        = pkgs.zsh;
-			};
-			/*
-			experiments = {
-				isNormalUser = true;
-				description  = "Experimentation";
-				packages     = with pkgs; [];
-				shell        = pkgs.zsh;
-			};
-			*/
-		};
-	};
 
 	nixpkgs = {
 		config = {
