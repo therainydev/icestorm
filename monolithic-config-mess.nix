@@ -1,10 +1,6 @@
-# see: configuration.nix(5)
-#      nixos manual: `nixos-help`
-
 { config, pkgs, ... }:
 {
 	imports = [
-		./hardware-configuration.nix
 		./networks.nix
 		./users/ice.nix
 	];
