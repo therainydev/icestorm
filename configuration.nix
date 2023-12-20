@@ -4,7 +4,7 @@
 { config, pkgs, ... }:
 {
 	imports = [
+		./hosts/contour.nix
 		./monolithic-config-mess.nix
-		./hardware-configuration.nix
 	];
 }

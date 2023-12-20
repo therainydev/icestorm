@@ -2,6 +2,7 @@
 {
 	imports = [
 		./networks.nix
+		./services/setwlmac.nix
 		./users/ice.nix
 	];
 
@@ -32,11 +33,9 @@
 	};
 
 	networking = {
-		hostName    = "contour";
 		enableIPv6  = false;
 		nameservers = [ "1.1.1.1" "1.0.0.1" ];
 		timeServers = [ "time.cloudflare.com" ];
-		extraHosts  = "127.0.0.1 contour.notomne.test";
 		firewall = {
 			allowedTCPPorts = [ 80 443 585 ];
 			allowedUDPPorts = [ 443 ];
@@ -54,25 +53,6 @@
 		network = {
 			enable = true;
 			wait-online.enable = false;
-		};
-		services = {
-			setwlmac = {
-				description = "mac address forgery";
-				wantedBy    = [ "wpa_supplicant.service" ];
-				after       = [ "wpa_supplicant.service" ];
-				script = ''
-					export PATH=/run/current-system/sw/bin
-					ip link set dev wlp0s20f3 down
-					#ip link set dev wlp0s20f3 address 76:$(
-					#	xxd -p -l 5 /dev/random |
-					ip link set dev wlp0s20f3 address fe:fe:$(
-						printf "%x" $(date +%s) |
-						sed 's/../&:/g; s/:$//'
-					)
-					#ip link set dev wlp0s20f3 address 72:00:00:00:00:01
-					ip link set dev wlp0s20f3 up
-				'';
-			};
 		};
 	};
 	
