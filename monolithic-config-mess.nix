@@ -121,7 +121,7 @@
 			/*
 			packageOverrides = pkgs: rec {
 				wpa_supplicant = pkgs.wpa_supplicant.overrideAttrs (attrs: {
-					patches = attrs.patches ++ [ "/etc/nixos/icestorm/eduroam.patch" ];
+					patches = attrs.patches ++ [ "/etc/nixos/no-rfc5746.patch" ];
 				});
 			};
 			*/
