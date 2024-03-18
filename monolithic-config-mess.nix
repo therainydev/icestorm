@@ -19,7 +19,7 @@
 		openssh = {
 			enable = true;
 			ports = [ 585 ];
-			banner = "rainydev's network - rainy.test\n";
+			#banner = "welcome to " + name + ".rainy.test\n";
 		};
 		printing = {
 			enable = true;
