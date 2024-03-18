@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
 	imports = [
-		./hosts/shadow.nix
+		./hosts/hostname.nix
 	];
 }

@@ -1,12 +1,9 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
 	users.users.ice = {
 		isNormalUser = true;
 		description  = "!omne";
-		extraGroups  = [ "audio" "input" "wheel" ];
+		extraGroups  = [ "audio" "dialout" "input" "wheel" ];
 		packages     = with pkgs; [
-			microsoft-edge
-			mprime
 		];
 		shell        = pkgs.zsh;
 	};
