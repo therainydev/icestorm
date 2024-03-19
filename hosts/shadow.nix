@@ -44,13 +44,3 @@
 	powerManagement.cpuFreqGovernor = "powersave";
 	hardware.cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;
 }
-
-/*
-
-In NixOS, how can I add a the hostname into a string?
-For example, I'd like to have a string containing:
-welcome to [hostname]
-
-[hostname] here should be replaced with networking.hostName.
-
-*/
