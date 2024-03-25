@@ -1,0 +1,44 @@
+{ config, pkgs, ... }: {
+	environment.systemPackages = with pkgs; [
+		bat
+		bc
+		bind
+		btop
+		cargo
+		dolphin
+		ffmpeg-full
+		file
+		gnome.cheese
+		gnupg
+		go-2fa
+		grimblast
+		jq
+		kitty
+		krita
+		libreoffice-fresh
+		librewolf
+		libsForQt5.qt5ct
+		lsof
+		nasm
+		neo-cowsay
+		nixos-option
+		nmap
+		pfetch-rs
+		pinentry-curses
+		pv
+		python311Full
+		rustc
+		smartmontools
+		tcpdump
+		texliveBasic
+		tofi
+		ungoogled-chromium
+		unzip
+		units
+		vim
+		vscodium
+		waybar
+		whois
+		yt-dlp
+	];
+}
